@@ -1,0 +1,27 @@
+﻿@model MvcProjectSweetAlert.Models.Category
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<br />
+<br />
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Kategori Ekle</legend>
+
+        <div class="editor-label">
+            <input type="text" name="Name" id="Name" class="form-control" />
+        </div>
+        <p>
+            <input type="submit" id="btnCreate" value="Create" class="btn btn-danger" />
+        </p>
+    </fieldset>
+}
+
+

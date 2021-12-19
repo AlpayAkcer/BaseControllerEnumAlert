@@ -1,0 +1,32 @@
+﻿@using MvcProjectSweetAlert.Models
+@model List<Category>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["notification"] != null)
+{
+    @Html.Raw(TempData["notification"])
+}
+
+<table style="margin-left:20px;">
+    <tr>
+        <th style="text-align:center">
+            Name
+        </th>
+
+        <th> Action </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="text-align:center">
+                <a href="/Home/DeleteCategory/@item.CategoryId" class="btn btn-info">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
